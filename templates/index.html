@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Misinformation Analyzer</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 40px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+.result {
+    margin-top:20px;
+    background:#f4f4f4;
+    padding:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>AI Headline Credibility Analyzer</h2>
+
+<form method="POST">
+<textarea name="text" placeholder="Paste a headline or article text..."></textarea>
+
+<br><br>
+
+<button type="submit">Analyze</button>
+</form>
+
+{% if result %}
+
+<div class="result">
+
+<h3>Analysis Result</h3>
+
+<p><b>Sentiment Score:</b> {{result.sentiment}}</p>
+<p><b>Sensational Words Detected:</b> {{result.sensational_words}}</p>
+<p><b>Credibility Risk:</b> {{result.risk}}</p>
+
+</div>
+
+{% endif %}
+
+</body>
+</html>
